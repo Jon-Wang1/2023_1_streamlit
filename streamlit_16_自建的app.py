@@ -6,6 +6,24 @@ import matplotlib.pyplot as plt
 
 st.title('我的第一个Streamlit APP')
 
+"""
+### markdown 
+[markdown学习](https://www.runoob.com/markdown)
+***
+- _test1_
+- **test2**
+- ___test3___
+***
+> 区块
+> + line1
+> + line2
+***
+####图片测试  
+
+![QYTANG LOGO](https://www.qytang.com/Public/home/images/logo0.png "QYTANG")
+***
+"""
+
 
 # 缓存计算结果
 @st.cache
