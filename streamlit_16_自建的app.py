@@ -49,14 +49,19 @@ st.subheader('CPU利用率线形图:sheep:')
 st.line_chart(data)
 
 
-# Pie chart, where the slices will be ordered and plotted counter-clockwise:
-labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
-sizes = [15, 30, 45, 10]
-explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
+# 饼状图:
+st.subheader('协议分布饼状图:smiling_imp:')
+protocol_list = 'HTTP', 'ICMP', 'SSH', 'SMTP'
+counts = [15, 30, 45, 10]
+explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'ICMP')
 
 fig1, ax1 = plt.subplots()
-ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
-        shadow=True, startangle=90)
+ax1.pie(counts,
+        explode=explode,
+        labels=protocol_list,
+        autopct='%1.1f%%',
+        shadow=True,
+        startangle=90)
 ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
 st.pyplot(fig1)
