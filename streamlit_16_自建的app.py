@@ -51,7 +51,7 @@ def return_cpu(hours):
     return df
 
 
-hours = st.slider('hours')
+hours = st.slider('最近多少小时的CPU利用率')
 
 # 获取数据
 # Create a text element and let the reader know the data is loading.
@@ -74,7 +74,7 @@ st.line_chart(data)
 # 饼状图:
 st.subheader('协议分布饼状图:smiling_imp:')
 protocol_list = ['HTTP', 'ICMP', 'SSH', 'SMTP']
-counts = [15, 30, 45, 10]
+counts = [15, 31, 45, 10]
 explode = (0, 0.1, 0, 0)  # 裂开的度(我们用第二个ICMP为例)
 
 fig1, ax1 = plt.subplots()
