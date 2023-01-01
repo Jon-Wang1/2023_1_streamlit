@@ -73,17 +73,18 @@ st.line_chart(data)
 
 # 饼状图:
 st.subheader('协议分布饼状图:smiling_imp:')
-protocol_list = 'HTTP', 'ICMP', 'SSH', 'SMTP'
+protocol_list = ['HTTP', 'ICMP', 'SSH', 'SMTP']
 counts = [15, 30, 45, 10]
-explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'ICMP')
+explode = (0, 0.1, 0, 0)  # 裂开的度(我们用第二个ICMP为例)
 
 fig1, ax1 = plt.subplots()
-ax1.pie(counts,
-        explode=explode,
-        labels=protocol_list,
-        autopct='%1.1f%%',
-        shadow=True,
-        startangle=90)
-ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+ax1.pie(counts,  # 数量的列表
+        explode=explode,  # 裂开效果的列表
+        labels=protocol_list,  # 分类的列表
+        autopct='%1.1f%%',  # 精确刀小数点后面1位
+        shadow=True,  # 有阴影
+        startangle=90)  # 从90度开始逆时针排布
+ax1.axis('equal')  # 长和宽相等, 确保是一个正圆
 
+# 绘制饼状图
 st.pyplot(fig1)
